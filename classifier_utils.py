@@ -810,7 +810,7 @@ class WSCProcessor(DataProcessor):
       query_idx = target['span1_index']
       pronoun = target['span2_text']
       pronoun_idx = target['span2_index']
-
+      #检查代词确是存在于句子中, 指代的内容判断也在句子中, eg: pronoun '他',   query: '马克'
       assert text_a[pronoun_idx: (pronoun_idx + len(pronoun))
                     ] == pronoun, "pronoun: {}".format(pronoun)
       assert text_a[query_idx: (query_idx + len(query))] == query, "query: {}".format(query)
@@ -825,9 +825,9 @@ class WSCProcessor(DataProcessor):
         text_a_list.insert(pronoun_idx + len(pronoun) + 1, "]")
         text_a_list.insert(query_idx + 2, "_")
         text_a_list.insert(query_idx + len(query) + 2 + 1, "_")
-
+      #处理成的格式，类似于， 代词用【】包裹，判断的指代内容用__包裹。 eg: '_马克_告诉皮特许多关于他自己的谎言，皮特也把这些谎言写进了[他]的书里。他应该多怀疑。'
       text_a = "".join(text_a_list)
-
+      # eg: text_a:  '鲍勃瘫倒在人行道上。不久[他]看见_卡尔_来帮忙。他病得很重'
       if set_type == "test":
         label = "true"
       else:

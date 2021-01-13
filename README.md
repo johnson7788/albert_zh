@@ -2,12 +2,9 @@
 
 An Implementation of <a href="https://arxiv.org/pdf/1909.11942.pdf">A Lite Bert For Self-Supervised Learning Language Representations</a> with TensorFlow
 
-ALBert is based on Bert, but with some improvements. It achieves state of the art performance on main benchmarks with 30% parameters less. 
-
-For albert_base_zh it only has ten percentage parameters compare of original bert model, and main accuracy is retained. 
-
-
-Different version of ALBERT pre-trained model for Chinese, including TensorFlow, PyTorch and Keras, is available now.
+ALBert基于Bert，但有一些改进。 它在参数上少了30％，可在主要基准上达到最先进的性能。 
+对于albert_base_zh，它只有1/10参数与原始bert模型进行比较，并且保留了主要准确率。 
+现已提供不同版本的针对中文的ALBERT预训练模型，包括TensorFlow，PyTorch和Keras。
 
 海量中文语料上预训练ALBERT模型：参数更少，效果更好。预训练小模型也能拿下13项NLP任务，ALBERT三大改造登顶GLUE基准
 

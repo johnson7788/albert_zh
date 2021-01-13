@@ -797,7 +797,7 @@ def main(_):
   num_warmup_steps = None
   if FLAGS.do_train:
     train_examples = processor.get_train_examples(FLAGS.data_dir)  # TODO
-    print("###length of total train_examples:", len(train_examples))
+    print("###训练样本的总个数是:", len(train_examples))
     num_train_steps = int(len(train_examples) / FLAGS.train_batch_size * FLAGS.num_train_epochs)
     num_warmup_steps = int(num_train_steps * FLAGS.warmup_proportion)
 
@@ -824,7 +824,7 @@ def main(_):
   if FLAGS.do_train:
     train_file = os.path.join(FLAGS.output_dir, "train.tf_record")
     train_file_exists = os.path.exists(train_file)
-    print("###train_file_exists:", train_file_exists, " ;train_file:", train_file)
+    print("###train_file_exists缓存文件:", train_file_exists, " ;train_file:", train_file)
     if not train_file_exists:  # if tf_record file not exist, convert from raw text file. # TODO
       if task_name == "inews":
         file_based_convert_examples_to_features_for_inews(
